@@ -2,16 +2,22 @@ import React, { useState } from "react";
 import { Grid, Row, Column, Breadcrumb } from "carbon-components-react";
 import style from "./style.scss";
 import { Extension, ExtensionProps } from "../extension/extension";
+import { getBreadcrumbs } from "@openmrs/esm-framework";
 
 export const DecorationPage: React.FC = () => {
   const extensionModule: ExtensionProps = {
     title1: "DEATH",
     title2: "Management",
     iconName: "healthicons:death",
-  }; 
-
+  };
   const [breadcumbs, setBreadcumbs] = useState([]);
- 
+
+  const test = () => {
+    // console.log("=====",getBreadcrumbs());
+    // console.log(getBreadcrumbs);
+  };
+
+  test();
   return (
     <div className={style.formatPage}>
       <Breadcrumb className={style.breadcumb}>home/</Breadcrumb>

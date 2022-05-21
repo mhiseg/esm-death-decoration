@@ -12,7 +12,6 @@ const Root: React.FC<RootProps> = () => {
     <BrowserRouter basename={window.spaBase}>
       <DecorationPage />
       <Footer text="Power By Mhiseg" />
-
     </BrowserRouter>
   );
 };
