@@ -1,6 +1,7 @@
 $feature-flags: (grid-columns-16: true);
 
 .formatPage{
+  position: relative;
   margin: 0;
   padding: 0 !important;
   margin-top:50px;
@@ -19,13 +20,8 @@ body{
 }
 .headerPage{
     margin: 0;
+    float: right;
 }
-.body{
-  height: calc(87vh - 1.5rem);
-  // border: 10px solid green;
-  // width: 100%;
-}
-
 .footer{
   font-size: 10px;
   justify-content: center;
@@ -37,18 +33,6 @@ body{
 
 .selfCenter{
   margin: 0 auto;
-}
-.title{
-  margin-top: 10px;
-  padding: 0;
-  font-family: 'Roboto Condensed';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 23px;
-  display: flex;
-  align-items: center;
-  color: rgba(0, 0, 0, 0.69);
 }
 .breadcumb{
   font-family: 'Roboto';

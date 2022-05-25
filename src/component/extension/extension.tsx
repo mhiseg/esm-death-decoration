@@ -17,7 +17,7 @@ export const Extension: React.FC<ExtensionProps> = (props) => {
   return (
     <Grid className={style.extensionContent}>
       <Row className={style.pm0}>
-        <Column sm={2} md={4} lg={6} className={style.pm0}>
+        <Column sm={1} md={1} lg={1} className={style.pm0}>
           <Icon
             className={style.marquedNameAlignement}
             icon={props.iconName}
@@ -27,9 +27,11 @@ export const Extension: React.FC<ExtensionProps> = (props) => {
           />
         </Column>
 
-        <Column className={style.pm0} sm={2} md={4} lg={6}>
-          <h1 className={style.title1}> {t(props.title1)} </h1>
-          <h6 className={style.title2}> {t(props.title2)} </h6>
+        <Column className={style.pm0} sm={3} md={7} lg={11}>
+          <div>
+            <p className={style.title1}> {t(props.title1)} </p>
+            <p className={style.title2}> {t(props.title2)} </p>
+          </div>
         </Column>
       </Row>
     </Grid>

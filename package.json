@@ -4,7 +4,7 @@
   "license": "MPL-2.0",
   "description": "A microfrontend admin OpenMRS",
   "browser": "dist/mhiseg-esm-death-app.js",
-  "repo": "/openmrs/frontend/mhiseg-esm-styleguide-app",
+  "repo": "/home/casimir/openmrs/frontend/mhiseg-esm-death-app",
   "main": "src/index.ts",
   "source": true,
   "scripts": {

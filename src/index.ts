@@ -1,4 +1,8 @@
-import { getAsyncLifecycle, defineConfigSchema } from "@openmrs/esm-framework";
+import {
+  getAsyncLifecycle,
+  defineConfigSchema,
+  registerBreadcrumbs,
+} from "@openmrs/esm-framework";
 import { configSchema } from "./config-schema";
 
 const importTranslation = require.context(
@@ -21,6 +25,24 @@ function setupOpenMRS() {
     featureName: "death",
     moduleName,
   };
+
+  registerBreadcrumbs([
+    {
+      path: `${window.spaBase}/death`,
+      title: "Admin-death",
+      parent: `${window.spaBase}/home`,
+    },
+    {
+      path: `${window.spaBase}/death/search`,
+      title: "Search-patient",
+      parent: `${window.spaBase}/home`,
+    },
+    {
+      path: `${window.spaBase}/death/add-patient`,
+      title: "Add-patient",
+      parent: `${window.spaBase}/home`,
+    },
+  ]);
 
   defineConfigSchema(moduleName, configSchema);
 
