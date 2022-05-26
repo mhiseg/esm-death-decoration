@@ -33,6 +33,11 @@ function setupOpenMRS() {
       parent: `${window.spaBase}/home`,
     },
     {
+      path: `${window.spaBase}/death/list-unvalidate`,
+      title: "list-unvalidate",
+      parent: `${window.spaBase}/home`,
+    },
+    {
       path: `${window.spaBase}/death/search`,
       title: "Search-patient",
       parent: `${window.spaBase}/home`,
