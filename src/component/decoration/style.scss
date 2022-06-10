@@ -4,7 +4,7 @@ $feature-flags: (grid-columns-16: true);
   position: relative;
   margin: 0;
   padding: 0 !important;
-  margin-top:50px;
+  margin-top: 50px;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 10px;
@@ -30,6 +30,9 @@ $feature-flags: (grid-columns-16: true);
 
 .selfCenter{
   margin: 0 auto;
+}
+.breadcrumbs{
+  margin-left: 1.8rem;
 }
 .breadcumb{
   font-family: 'Roboto';
