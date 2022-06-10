@@ -11,10 +11,7 @@ $feature-flags: (grid-columns-16: true);
   background: transparent;
   width: 100%;
 }
-body{
-  padding-left: 10px;
-  padding-right: 10px;
-}
+
 .extension{
    padding: 0;
 }
@@ -43,6 +40,9 @@ body{
   display: flex;
   align-items: center;
   color: #000000;
+}
+.extension-module{
+  margin-left: 0.9rem;
 }
 @media(max-width: 491px) {
   .body{

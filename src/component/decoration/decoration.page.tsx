@@ -14,7 +14,7 @@ export const DecorationPage: React.FC = () => {
   return (
     <div className={style.formatPage}>
       <ExtensionSlot
-        className="extension-module"
+        className={`${style["extension-module"]}`}
         extensionSlotName="breadcrumbs-slot"
       />
       <Grid className={style.pm0} fullWidth={true}>
