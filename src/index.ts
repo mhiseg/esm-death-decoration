@@ -29,22 +29,27 @@ function setupOpenMRS() {
   registerBreadcrumbs([
     {
       path: `${window.spaBase}/death`,
-      title: "Admin-death",
+      title: "Admin-Death",
       parent: `${window.spaBase}/home`,
     },
     {
       path: `${window.spaBase}/death/list-unvalidate`,
-      title: "list-unvalidate",
+      title: "List-Unvalidate",
       parent: `${window.spaBase}/home`,
     },
     {
       path: `${window.spaBase}/death/search`,
-      title: "Search-patient",
+      title: "Search-Patient",
       parent: `${window.spaBase}/home`,
     },
     {
-      path: `${window.spaBase}/death/add-patient`,
-      title: "Add-patient",
+      path: `${window.spaBase}/death/patient`,
+      title: "Patient",
+      parent: `${window.spaBase}/home`,
+    },
+    {
+      path: `${window.spaBase}/death/patient/declare`,
+      title: "Declare-Death",
       parent: `${window.spaBase}/home`,
     },
   ]);
@@ -56,6 +61,7 @@ function setupOpenMRS() {
       {
         load: getAsyncLifecycle(() => import("./root.component"), options),
         route: baseUrl,
+        privilege: "App: death.management",
       },
     ],
   };

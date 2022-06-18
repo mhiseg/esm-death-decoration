@@ -11,20 +11,6 @@ const Root: React.FC<RootProps> = () => {
   return (
     <BrowserRouter basename={window.spaBase}>
       <DecorationPage />
-      {/* {user === false ? (
-          <Redirect
-            to={{
-              pathname: `${openmrsSpaBase}login`,
-              state: {
-                referrer: window.location.pathname.slice(
-                  window.location.pathname.indexOf(openmrsSpaBase) + openmrsSpaBase.length - 1,
-                ),
-              },
-            }}
-          />
-        ) : (
-          user && <Navbar allowedLocales={allowedLocales} user={user} onLogout={logout} session={userSession} />
-        )} */}
       <Footer text="Power By Mhiseg" />
     </BrowserRouter>
   );
