@@ -52,6 +52,11 @@ function setupOpenMRS() {
       title: "Declare-Death",
       parent: `${window.spaBase}/home`,
     },
+    {
+      path: `${window.spaBase}/death/patient/validation`,
+      title: "Validate-Death",
+      parent: `${window.spaBase}/home`,
+    },
   ]);
 
   defineConfigSchema(moduleName, configSchema);
