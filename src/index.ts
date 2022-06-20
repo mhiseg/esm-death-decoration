@@ -48,12 +48,12 @@ function setupOpenMRS() {
       parent: `${window.spaBase}/home`,
     },
     {
-      path: `${window.spaBase}/death/patient/declare`,
+      path: `${window.spaBase}/death/declare/patient`,
       title: "Declare-Death",
       parent: `${window.spaBase}/home`,
     },
     {
-      path: `${window.spaBase}/death/patient/validation`,
+      path: `${window.spaBase}/death/validate/patient`,
       title: "Validate-Death",
       parent: `${window.spaBase}/home`,
     },
