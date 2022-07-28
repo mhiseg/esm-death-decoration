@@ -1,10 +1,9 @@
 {
-  "name": "@mhiseg/esm-death-app",
+  "name": "@mhiseg/esm-decoration-app",
   "version": "0.0.1",
   "license": "MPL-2.0",
   "description": "A microfrontend admin OpenMRS",
-  "browser": "dist/mhiseg-esm-death-app.js",
-  "repo": "/home/casimir/openmrs/frontend/mhiseg-esm-death-app",
+  "browser": "dist/mhiseg-esm-decoration-app.js",
   "main": "src/index.ts",
   "source": true,
   "scripts": {

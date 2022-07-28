@@ -20,7 +20,7 @@ const backendDependencies = {
 const baseUrl = "death";
 
 function setupOpenMRS() {
-  const moduleName = "@mhiseg/esm-death-app";
+  const moduleName = "@mhiseg/esm-decoration-app";
 
   const options = {
     featureName: "death",
@@ -77,7 +77,7 @@ function setupOpenMRS() {
       {
         load: getAsyncLifecycle(() => import("./root.component"), options),
         route: "settings",
-        privilege: "App: death.management",
+        privilege: "App: system.administration",
       },
     ],
   };
