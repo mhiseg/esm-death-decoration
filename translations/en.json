@@ -1,4 +1,10 @@
 {
-  "casualGreeting": "hey",
-  "formalGreeting": "hello"
+  "gestionUser": "Admin user",
+  "adminDeath":"Admin-Death",
+  "listUnvalidated": "List-Unvalidated",
+  "searchPatient": "Search-Patient",
+  "patient":"Patient",
+  "declareDeath": "Declare-Death",
+  "validateDeath": "Validate-Death",
+  "settings": "Administration"
 }

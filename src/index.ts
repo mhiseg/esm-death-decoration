@@ -3,6 +3,7 @@ import {
   defineConfigSchema,
   registerBreadcrumbs,
 } from "@openmrs/esm-framework";
+import { useTranslation } from "react-i18next";
 import { configSchema } from "./config-schema";
 
 const importTranslation = require.context(
@@ -57,6 +58,11 @@ function setupOpenMRS() {
       title: "Validate-Death",
       parent: `${window.spaBase}/home`,
     },
+    {
+      path: `${window.spaBase}/settings`,
+      title: "Settings",
+      parent: `${window.spaBase}/home`,
+    },
   ]);
 
   defineConfigSchema(moduleName, configSchema);
@@ -66,6 +72,11 @@ function setupOpenMRS() {
       {
         load: getAsyncLifecycle(() => import("./root.component"), options),
         route: baseUrl,
+        privilege: "App: death.management",
+      },
+      {
+        load: getAsyncLifecycle(() => import("./root.component"), options),
+        route: "settings",
         privilege: "App: death.management",
       },
     ],

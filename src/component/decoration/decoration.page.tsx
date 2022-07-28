@@ -19,7 +19,7 @@ export const DecorationPage: React.FC = () => {
       />
       <Grid className={style.pm0} fullWidth={true}>
         <Row className={style.headerPage}>
-          <Extension {...extensionModule} />
+          <Extension />
         </Row>
       </Grid>
     </div>
