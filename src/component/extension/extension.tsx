@@ -73,7 +73,10 @@ export const Extension: React.FC = () => {
           {menuItems.map((menuItem) => {
             return (
               <li>
-                <ConfigurableLink to={menuItem.link} className={style.title1}>
+                <ConfigurableLink
+                  to={menuItem.link}
+                  className={style.titleItems}
+                >
                   {t(menuItem.title)}
                 </ConfigurableLink>
               </li>

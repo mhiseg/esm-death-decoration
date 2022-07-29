@@ -1,13 +1,15 @@
-.title1{
+.title1 {
     font-style: normal;
     font-size: medium;
     font-weight: bold;
     color: #555555;
     padding: 0;
     margin: 0;
-    margin-top: 5px;
+    text-decoration: none;
+    cursor: pointer;
 }
-.title2{
+
+.title2 {
     font-weight: lighter;
     font-size: smaller;
     line-height: 1.5;
@@ -15,28 +17,54 @@
     padding: 0;
     margin: 0;
     line-height: 0.5;
+    cursor: pointer;
 }
 
-.extensionContent{
+.extensionContent {
     margin: 0;
     padding: 0;
     padding: 0;
     float: right;
 }
 
-.marquedNameAlignement{
+.marquedNameAlignement {
     float: right;
+    cursor: pointer;
 }
-.pm0{
+
+.pm0 {
     margin: 0;
     padding: 0;
 }
-.menu{
-    margin-top: 3.5em;
-    position: absolute; 
+
+.menu {
+    min-width: 250px;
+    margin-top: 3em;
+    position: absolute;
     float: right;
-    right: 2.35em;
-    // background-origin: padding-box;
+    right: 2em;
     z-index: 3000000;
+    background-color: white;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
+    li {
+    padding: 15px;
+        &:hover {
+            border-left: 2px solid rgb(250, 109, 255);
+            background-color: rgb(236, 234, 236);
+            color: #555555;
+        }
+    }
+}
+
+.titleItems {
+    font-style: normal;
+    font-size: medium;
+    font-weight: bold;
+    color: #555555;
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: lighter;
 }
