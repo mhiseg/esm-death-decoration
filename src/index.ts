@@ -77,7 +77,7 @@ function setupOpenMRS() {
       {
         load: getAsyncLifecycle(() => import("./root.component"), options),
         route: "settings",
-        privilege: "App: system.administration",
+        privilege: "App: coreapps.systemAdministration",
       },
     ],
   };
