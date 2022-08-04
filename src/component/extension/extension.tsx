@@ -18,22 +18,28 @@ export const Extension: React.FC = () => {
   const [title1, setTitle1] = useState("DE4ATH");
   const [title2, setTitle2] = useState("Mana4gement");
   const [iconName, setIconName] = useState("hea4lthicons:death");
+  const [iconSize, setIconSize] = useState([32, 32]);
   const [menuItems, setMenuItems] = useState([]);
+  const [marginIcon, setMaarginIcon] = useState("0px");
 
   const history = useHistory();
 
   const setExtension = (name: string) => {
     switch (name) {
       case "death":
-        setTitle1("DEATH");
+        setTitle1("DEATH-patient");
         setTitle2("Management");
         setIconName("healthicons:death");
         setMenuItems([]);
+        setIconSize([34, 38]);
+        setMaarginIcon("-2px");
         break;
       case "settings":
         setTitle1("SYSTEM");
         setTitle2("Management");
         setIconName("dashicons:admin-generic");
+        setIconSize([31, 31]);
+        setMaarginIcon("2px");
         setMenuItems([
           { title: t("gestionUser"), link: window.spaBase + "/settings" },
         ]);
@@ -49,15 +55,15 @@ export const Extension: React.FC = () => {
 
   return (
     <>
-      <Grid className={style.extensionContent}>
-        <Row className={style.pm0} onClick={() => setShow(!show)}>
+      <Grid className={style.pm0} fullWidth={true}>
+        <Row className={style.extensionContent} onClick={() => setShow(!show)}>
           <Column sm={1} md={1} lg={1} className={style.pm0}>
             <Icon
               className={style.marquedNameAlignement}
               icon={iconName}
-              color="#555"
-              width={40}
-              height={41}
+              width={iconSize[0]}
+              height={iconSize[1]}
+              style={{ marginTop: marginIcon }}
             />
           </Column>
           <Column className={style.pm0} sm={3} md={7} lg={11}>

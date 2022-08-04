@@ -1,13 +1,16 @@
 .title1 {
     font-style: normal;
-    font-size: medium;
-    font-weight: bold;
+    font-size: bold;
+    font-weight: bolder;
     color: #555555;
     padding: 0;
     margin: 0;
-    margin-top: -2px;
     text-decoration: none;
     cursor: pointer;
+
+    &:hover {
+        color: #034e5e;
+    }
 }
 
 .title2 {
@@ -17,22 +20,29 @@
     color: #6B6868;
     padding: 0;
     margin: 0;
-    line-height: 0.8;
+    line-height: 0.5;
     cursor: pointer;
+
+    &:hover {
+        color: #034e5e;
+    }
 }
 
 .extensionContent {
     margin: 0;
     padding: 0;
     padding: 0;
-    margin-right: 5px;
+    margin-left: -150px;
 }
 
 .marquedNameAlignement {
     float: right;
     cursor: pointer;
-    height: 32px;
-    width: 32px;
+    color:"#6B6868";
+
+    &:hover {
+        color: #034e5e;
+    }
 }
 
 .pm0 {
