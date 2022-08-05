@@ -15,13 +15,16 @@ $feature-flags: (grid-columns-16: true);
 .extension{
    padding: 0;
 }
+
 .headerPage{
     margin-top: 30px;
     float: right;
 }
+
 .footer{
-  font-size: 10px;
+  font-size: x-small;
   justify-content: center;
+  color: gray;
 }
 .pm0{
   margin: 0;
