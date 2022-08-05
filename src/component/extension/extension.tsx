@@ -55,22 +55,22 @@ export const Extension: React.FC = () => {
 
   return (
     <>
-      <Grid className={style.pm0} fullWidth={true}>
+      <Grid className={style.main} fullWidth={true}>
         <Row className={style.extensionContent} onClick={() => setShow(!show)}>
-          <Column sm={1} md={1} lg={1} className={style.pm0}>
-            <Icon
-              className={style.marquedNameAlignement}
-              icon={iconName}
-              width={iconSize[0]}
-              height={iconSize[1]}
-              style={{ marginTop: marginIcon }}
-            />
-          </Column>
-          <Column className={style.pm0} sm={3} md={7} lg={11}>
-            <div>
+          <Icon
+            className={style.marquedNameAlignement}
+            icon={iconName}
+            width={iconSize[0]}
+            height={iconSize[1]}
+            style={{ marginTop: marginIcon }}
+          />
+          <Column className={style.pm0}>
+            <Column className={style.pm0}>
               <p className={style.title1}> {t(title1)} </p>
+            </Column>
+            <Column className={style.pm0}>
               <p className={style.title2}> {t(title2)} </p>
-            </div>
+            </Column>
           </Column>
         </Row>
       </Grid>

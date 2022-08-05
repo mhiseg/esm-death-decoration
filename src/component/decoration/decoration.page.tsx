@@ -17,11 +17,7 @@ export const DecorationPage: React.FC = () => {
         className={`extension-module ${style.breadcrumbs}`}
         extensionSlotName="breadcrumbs-slot"
       />
-      <Grid className={style.pm0} fullWidth={true}>
-        <Row className={style.headerPage}>
-          <Extension />
-        </Row>
-      </Grid>
+      <Extension />
     </div>
   );
 };
