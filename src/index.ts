@@ -80,6 +80,17 @@ function setupOpenMRS() {
         privilege: "App: system.administration",
       },
     ],
+    extensions: [
+      {
+        id: "death-management-link",
+        slot: "app-menu-slot",
+        load: getAsyncLifecycle(
+          () => import("./refapp/death.management"),
+          options
+        ),
+        privilege: "App: death.management",
+      },
+    ],
   };
 }
 
