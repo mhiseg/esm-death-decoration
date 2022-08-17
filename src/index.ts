@@ -72,7 +72,7 @@ function setupOpenMRS() {
       {
         load: getAsyncLifecycle(() => import("./root.component"), options),
         route: baseUrl,
-        privilege: "App: death.management",
+        privilege: "App: admin.management",
       },
       {
         load: getAsyncLifecycle(() => import("./root.component"), options),

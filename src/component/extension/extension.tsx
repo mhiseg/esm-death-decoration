@@ -15,9 +15,9 @@ export const Extension: React.FC = () => {
   const config = useConfig();
   const { t } = useTranslation();
   const [show, setShow] = useState(false);
-  const [title1, setTitle1] = useState("DE4ATH");
-  const [title2, setTitle2] = useState("Mana4gement");
-  const [iconName, setIconName] = useState("hea4lthicons:death");
+  const [title1, setTitle1] = useState("");
+  const [title2, setTitle2] = useState("");
+  const [iconName, setIconName] = useState("");
   const [iconSize, setIconSize] = useState([32, 32]);
   const [menuItems, setMenuItems] = useState([]);
   const [marginIcon, setMaarginIcon] = useState("0px");
@@ -31,15 +31,15 @@ export const Extension: React.FC = () => {
         setTitle2("Management");
         setIconName("healthicons:death");
         setMenuItems([]);
-        setIconSize([34, 41]);
+        setIconSize([36, 42]);
         setMaarginIcon("-3px");
         break;
       case "settings":
         setTitle1("SYSTEM");
         setTitle2("Management");
         setIconName("dashicons:admin-generic");
-        setIconSize([31, 31]);
-        setMaarginIcon("2px");
+        setIconSize([34, 33.5]);
+        setMaarginIcon("1.5px");
         setMenuItems([
           { title: t("gestionUser"), link: window.spaBase + "/settings" },
         ]);
@@ -64,14 +64,22 @@ export const Extension: React.FC = () => {
             height={iconSize[1]}
             style={{ marginTop: marginIcon }}
           />
-          <Column className={style.pm0}>
+          {title2 ? (
             <Column className={style.pm0}>
-              <p className={style.title1}> {t(title1)} </p>
+              <Column className={style.pm0}>
+                <p className={style.title1}> {t(title1)} </p>
+              </Column>
+              <Column className={style.pm0}>
+                <p className={style.title2}> {t(title2)} </p>
+              </Column>
             </Column>
+          ) : (
             <Column className={style.pm0}>
-              <p className={style.title2}> {t(title2)} </p>
+              <Column className={style.pm0}>
+                <p className={style.title0}> {t(title1)} </p>
+              </Column>
             </Column>
-          </Column>
+          )}
         </Row>
       </Grid>
       {show && menuItems.length > 0 && (
