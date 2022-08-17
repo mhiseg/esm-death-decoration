@@ -20,8 +20,8 @@ export const Extension: React.FC = () => {
   const [iconName, setIconName] = useState("");
   const [iconSize, setIconSize] = useState([32, 32]);
   const [menuItems, setMenuItems] = useState([]);
-  const [marginIcon, setMaarginIcon] = useState("0px");
-
+  const [marginIcon, setMarginIcon] = useState("0px");
+  const [marginRight, setMarginRight] = useState("");
   const history = useHistory();
 
   const setExtension = (name: string) => {
@@ -32,16 +32,34 @@ export const Extension: React.FC = () => {
         setIconName("healthicons:death");
         setMenuItems([]);
         setIconSize([36, 42]);
-        setMaarginIcon("-3px");
+        setMarginIcon("-3px");
         break;
       case "settings":
         setTitle1("SYSTEM");
         setTitle2("Management");
         setIconName("dashicons:admin-generic");
         setIconSize([34, 33.5]);
-        setMaarginIcon("1.5px");
+        setMarginIcon("1.5px");
         setMenuItems([
           { title: t("gestionUser"), link: window.spaBase + "/settings" },
+        ]);
+        break;
+      case "out-patient":
+        setTitle1("OUTPATIENT");
+        setTitle2("Clinics");
+        setIconName("medical-icon:i-family-practice");
+        setIconSize([26, 33.5]);
+        setMarginIcon("1.5px");
+        setMarginRight("3px");
+        setMenuItems([
+          {
+            title: t("addNewPatient"),
+            link: window.spaBase + "/out-patient/patient",
+          },
+          {
+            title: t("findPatient"),
+            link: window.spaBase + "/out-patient/search",
+          },
         ]);
         break;
       default:
@@ -62,7 +80,7 @@ export const Extension: React.FC = () => {
             icon={iconName}
             width={iconSize[0]}
             height={iconSize[1]}
-            style={{ marginTop: marginIcon }}
+            style={{ marginTop: marginIcon, marginRight: marginRight }}
           />
           {title2 ? (
             <Column className={style.pm0}>

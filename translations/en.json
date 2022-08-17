@@ -6,5 +6,7 @@
   "patient":"Patient",
   "declareDeath": "Declare-Death",
   "validateDeath": "Validate-Death",
-  "settings": "Administration"
+  "settings": "Administration",
+  "addNewPatient": "Add a patient",
+  "findPatient": "Find a patient"
 }

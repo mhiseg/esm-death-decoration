@@ -17,13 +17,12 @@ const backendDependencies = {
   fhir2: "^1.2.0",
   "webservices.rest": "^2.2.0",
 };
-const baseUrl = "death";
 
 function setupOpenMRS() {
   const moduleName = "@mhiseg/esm-decoration-app";
 
   const options = {
-    featureName: "death",
+    featureName: "decoration",
     moduleName,
   };
 
@@ -63,6 +62,21 @@ function setupOpenMRS() {
       title: "Settings",
       parent: `${window.spaBase}/home`,
     },
+    {
+      path: `${window.spaBase}/out-patient`,
+      title: "Admin-out-patient",
+      parent: `${window.spaBase}/home`,
+    },
+    {
+      path: `${window.spaBase}/out-patient/search`,
+      title: "Search-Patient",
+      parent: `${window.spaBase}/home`,
+    },
+    {
+      path: `${window.spaBase}/out-patient/patient`,
+      title: "Patient",
+      parent: `${window.spaBase}/home`,
+    },
   ]);
 
   defineConfigSchema(moduleName, configSchema);
@@ -71,13 +85,18 @@ function setupOpenMRS() {
     pages: [
       {
         load: getAsyncLifecycle(() => import("./root.component"), options),
-        route: baseUrl,
-        privilege: "App: admin.management",
+        route: "death",
+        privilege: "App: death.management",
       },
       {
         load: getAsyncLifecycle(() => import("./root.component"), options),
         route: "settings",
-        privilege: "App: coreapps.systemAdministration",
+        privilege: "App: admin.management",
+      },
+      {
+        load: getAsyncLifecycle(() => import("./root.component"), options),
+        route: "out-patient",
+        privilege: "App: out-patient.clinics",
       },
     ],
   };

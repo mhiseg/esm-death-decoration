@@ -5,12 +5,6 @@ import { Extension, ExtensionProps } from "../extension/extension";
 import { ExtensionSlot } from "@openmrs/esm-framework";
 
 export const DecorationPage: React.FC = () => {
-  const extensionModule: ExtensionProps = {
-    title1: "DEATH",
-    title2: "Management",
-    iconName: "healthicons:death",
-  };
-
   return (
     <div className={style.formatPage}>
       <ExtensionSlot
