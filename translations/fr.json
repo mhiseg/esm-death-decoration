@@ -1,0 +1,10 @@
+{
+    "gestionUser": "Gestion utilisateur",
+    "adminDeath": "Gestion de décès",
+    "listUnvalidated": "Liste des morts déclarés",
+    "declareDeath": "Déclarer un mort",
+    "patient": "Patient",
+    "settings": "Administration",
+    "addNewPatient": "Enregistrer un nouveau patient",
+    "findPatient": "Rechercher un patient"
+}
