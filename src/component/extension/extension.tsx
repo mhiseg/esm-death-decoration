@@ -45,11 +45,11 @@ export const Extension: React.FC = () => {
         ]);
         break;
       case "out-patient":
-        setTitle1("OUTPATIENT");
-        setTitle2("Clinics");
+        setTitle1("Outpatient Clinics");
+        //setTitle2("Clinics");
         setIconName("medical-icon:i-family-practice");
-        setIconSize([26, 33.5]);
-        setMarginIcon("1.5px");
+        setIconSize([14, 21.5]);
+        setMarginIcon("8px");
         setMarginRight("3px");
         setMenuItems([
           {
