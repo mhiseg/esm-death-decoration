@@ -1,10 +1,25 @@
-import React, { useContext, useEffect } from "react";
-import { Grid, Row, Column } from "carbon-components-react";
+import React, { useEffect } from "react";
 import style from "./style.scss";
-import { Extension, ExtensionProps } from "../extension/extension";
-import { ExtensionSlot } from "@openmrs/esm-framework";
+import { Extension } from "../extension/extension";
+import {
+  ExtensionSlot,
+  getLoggedInUser,
+  LoggedInUser,
+} from "@openmrs/esm-framework";
+import { getSynchronizedCurrentUser } from "../resource";
 
 export const DecorationPage: React.FC = () => {
+  // const [user, setUser] = React.useState<LoggedInUser>(null);
+
+  // useEffect(() => {
+  //   const currentUserSub = getSynchronizedCurrentUser({
+  //     includeAuthStatus: true,
+  //   }).subscribe((res) => setUser(res.user));
+  //   return () => {
+  //     currentUserSub;
+  //   };
+  // }, []);
+
   return (
     <div className={style.formatPage}>
       <ExtensionSlot
@@ -15,6 +30,3 @@ export const DecorationPage: React.FC = () => {
     </div>
   );
 };
-function MyContext(MyContext: any) {
-  throw new Error("Function not implemented.");
-}

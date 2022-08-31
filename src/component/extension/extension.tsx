@@ -1,19 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Row, Column, IconData } from "carbon-components-react";
+import { Grid, Row, Column } from "carbon-components-react";
 import style from "./extension.scss";
 import { Icon } from "@iconify/react";
 import { useTranslation } from "react-i18next";
-import { ConfigurableLink, useConfig } from "@openmrs/esm-framework";
-import { useHistory } from "react-router-dom";
+import { ConfigurableLink, LoggedInUser } from "@openmrs/esm-framework";
+import { getSynchronizedCurrentUser } from "../resource";
 
-export interface ExtensionProps {
-  title1?: string;
-  title2?: string;
-  iconName?: string;
-}
 export const Extension: React.FC = () => {
-  const config = useConfig();
-  const { t } = useTranslation();
+  let { t } = useTranslation();
   const [show, setShow] = useState(false);
   const [title1, setTitle1] = useState("");
   const [title2, setTitle2] = useState("");
@@ -22,9 +16,24 @@ export const Extension: React.FC = () => {
   const [menuItems, setMenuItems] = useState([]);
   const [marginIcon, setMarginIcon] = useState("0px");
   const [marginRight, setMarginRight] = useState("");
-  const history = useHistory();
+  const [user, setUser] = React.useState<LoggedInUser>(null);
 
-  const setExtension = (name: string) => {
+  useEffect(() => {
+    const currentUserSub = getSynchronizedCurrentUser({
+      includeAuthStatus: true,
+    }).subscribe((res) => {
+      setUser(res.user);
+      let url = location.pathname
+        ?.split(window.spaBase + "/")[1]
+        ?.split("/")[0];
+      setExtension(url, res.user);
+    });
+    return () => {
+      currentUserSub;
+    };
+  }, []);
+
+  const setExtension = (name: string, user) => {
     switch (name) {
       case "death":
         setTitle1("DEATH");
@@ -33,6 +42,64 @@ export const Extension: React.FC = () => {
         setMenuItems([]);
         setIconSize([36, 42]);
         setMarginIcon("-3px");
+        switch (user.systemId.split("-")[0]) {
+          case "nurse":
+            setMenuItems([
+              {
+                title: t("findPatient"),
+                link: window.spaBase + "/death/search",
+              },
+              {
+                title: t("addNewPatient"),
+                link: window.spaBase + "/death/patient",
+              },
+            ]);
+            break;
+          case "doctor":
+            setMenuItems([
+              {
+                title: t("findPatient"),
+                link: window.spaBase + "/death/search",
+              },
+              {
+                title: t("addNewPatient"),
+                link: window.spaBase + "/death/patient",
+              },
+              {
+                title: t("declareDeath"),
+                link: window.spaBase + "/death/declare/patient",
+              },
+              {
+                title: t("listUnvalidated"),
+                link: window.spaBase + "/death/list-unvalidate",
+              },
+            ]);
+            break;
+          case "admin":
+            setMenuItems([
+              {
+                title: t("findPatient"),
+                link: window.spaBase + "/death/search",
+              },
+              {
+                title: t("addNewPatient"),
+                link: window.spaBase + "/death/patient",
+              },
+              {
+                title: t("declareDeath"),
+                link: window.spaBase + "/death/declare/patient",
+              },
+              {
+                title: t("listUnvalidated"),
+                link: window.spaBase + "/death/list-unvalidate",
+              },
+              {
+                title: t("adminDeath"),
+                link: window.spaBase + "/death/admin",
+              },
+            ]);
+            break;
+        }
         break;
       case "settings":
         setTitle1("SYSTEM");
@@ -66,11 +133,6 @@ export const Extension: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    let url = location.pathname?.split(window.spaBase + "/")[1]?.split("/")[0];
-    setExtension(url);
-  }, []);
-
   return (
     <>
       <Grid className={style.main} fullWidth={true}>
@@ -100,6 +162,7 @@ export const Extension: React.FC = () => {
           )}
         </Row>
       </Grid>
+      <>{user?.locale}</>
       {show && menuItems.length > 0 && (
         <ul className={style.menu}>
           {menuItems.map((menuItem) => {

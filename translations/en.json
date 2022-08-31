@@ -1,11 +1,9 @@
 {
   "gestionUser": "Admin user",
-  "adminDeath":"Admin-Death",
-  "listUnvalidated": "List-Unvalidated",
-  "searchPatient": "Search-Patient",
+  "adminDeath":"Admin death",
+  "listUnvalidated": "List unvalidated",
+  "declareDeath": "Declare death",
   "patient":"Patient",
-  "declareDeath": "Declare-Death",
-  "validateDeath": "Validate-Death",
   "settings": "Administration",
   "addNewPatient": "Add a patient",
   "findPatient": "Find a patient"
