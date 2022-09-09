@@ -77,6 +77,11 @@ function setupOpenMRS() {
       title: "Patient",
       parent: `${window.spaBase}/home`,
     },
+    {
+      path: `${window.spaBase}/out-patient/dashboard/patient`,
+      title: "Patient-Dashboard",
+      parent: `${window.spaBase}/out-patient/search`,
+    },
   ]);
 
   defineConfigSchema(moduleName, configSchema);
