@@ -129,6 +129,13 @@ export const Extension: React.FC = () => {
           },
         ]);
         break;
+      case "profile":
+        setTitle1("Profile");
+        setTitle2("Management");
+        setIconName("carbon:user-profile");
+        setIconSize([34, 33.5]);
+        setMarginIcon("1.5px");
+        break;
       default:
     }
   };

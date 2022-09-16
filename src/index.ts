@@ -103,6 +103,10 @@ function setupOpenMRS() {
         route: "out-patient",
         privilege: "App: out-patient.clinics",
       },
+      {
+        load: getAsyncLifecycle(() => import("./root.component"), options),
+        route: "profile",
+      },
     ],
     extensions: [
       {
