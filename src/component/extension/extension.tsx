@@ -114,10 +114,10 @@ export const Extension: React.FC = () => {
       case "out-patient":
         setTitle1("Outpatient Clinics");
         //setTitle2("Clinics");
-        setIconName("medical-icon:i-family-practice");
-        setIconSize([14, 21.5]);
-        setMarginIcon("8px");
-        setMarginRight("3px");
+        setIconName("healthicons:ambulatory-clinic-outline");
+        setIconSize([22, 22]);
+        setMarginIcon("4px");
+        setMarginRight("1px");
         setMenuItems([
           {
             title: t("addNewPatient"),

@@ -1,6 +1,20 @@
-.title0{
+.title-page {
+    position: relative;
+    margin-top: -26px;
+    margin-left: 30px;
+    padding-bottom: 2px;
+    width: 70%;
+    overflow: hidden;
+    font-family: Roboto Condensed;
     font-style: normal;
-    font-size: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    color: rgba(0, 0, 0, .69);
+}
+
+.title0 {
+    font-style: normal;
+    font-size: 16px;
     font-weight: bolder;
     color: #555555;
     padding: 0;
@@ -8,6 +22,7 @@
     text-decoration: none;
     cursor: pointer;
 }
+
 .title1 {
     font-style: normal;
     font-size: 16px;
@@ -32,12 +47,14 @@
 
 .extensionContent {
     float: right;
-    margin-top: 30px;
+    margin-top: 10px;
 
     &:hover {
         color: #034e5e;
 
-        .title1, .title2{
+        .title1,
+        .title2,
+        .title0 {
             color: #034e5e;
         }
     }
@@ -45,7 +62,7 @@
 
 .marquedNameAlignement {
     cursor: pointer;
-    color:"#6B6868";
+    color: "#6B6868";
 }
 
 .pm0 {
@@ -53,7 +70,7 @@
     padding: 0;
 }
 
-.main{
+.main {
     margin-right: 5px;
 }
 
@@ -63,13 +80,15 @@
     position: absolute;
     float: right;
     right: 2em;
-    z-index: 3000000;
+    z-index: 3000;
     background-color: white;
     padding-bottom: 20px;
     border-radius: 5px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
     li {
-    padding: 10px;
+        padding: 10px;
+
         &:hover {
             border-left: 2px solid rgb(250, 109, 255);
             background-color: rgb(236, 234, 236);

@@ -5,8 +5,8 @@ $feature-flags: (grid-columns-16: true);
   margin: 0;
   padding: 0 !important;
   margin-top: 52px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
   padding-top: 10px;
   background: transparent;
   width: 100%;
@@ -21,11 +21,6 @@ $feature-flags: (grid-columns-16: true);
     float: right;
 }
 
-.footer{
-  font-size: x-small;
-  justify-content: center;
-  color: gray;
-}
 .pm0{
   margin: 0;
   padding: 0;
@@ -50,6 +45,17 @@ $feature-flags: (grid-columns-16: true);
 .extension-module{
   margin-left: 0.9rem;
 }
+
+.footer_mhiseg{
+  font-size: x-small;
+  color: gray;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
 @media(max-width: 491px) {
   .body{
     background-color: red;
